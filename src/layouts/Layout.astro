@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="stylesheet" href="/src/css/style.css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
@@ -12,11 +13,22 @@
 	</body>
 </html>
 
-<style>
+<style is:global>
+	:root {
+		--color-brand: #6366f1; /* color principal de la marca */
+		--color-highlight: #f59e0b; /* para resaltar botones o links */
+		--color-bg: #ffffff; /* fondo */
+		--color-surface: #f3f4f6; /* tarjetas, secciones */
+		--color-text: #111827; /* texto principal */
+		--color-secundary: #363636; /* texto secundario */
+		--color-error: #dc2626; /* mensajes de error */
+		--color-success: #16a34a; /* mensajes de éxito */
+	}
 	html,
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		height: 200vh;
+		font-family: "Segoe UI";
 	}
 </style>
