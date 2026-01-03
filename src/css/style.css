@@ -5,3 +5,9 @@
 body {
     /* background: blue; */
 }
+
+@layer utilities {
+    .second\:text-red-500> :nth-child(2) {
+        color: #ef4444;
+    }
+}

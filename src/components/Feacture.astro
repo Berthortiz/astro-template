@@ -1,15 +1,27 @@
 ---
 import IconCheck from "../components/Icons/IconCheck.astro";
+
+interface Props {
+    flexRowRevers?: boolean;
+}
+
+const { flexRowRevers = false } = Astro.props;
 ---
 
 <section
     class="w-full h-fit flex md:items-center relative text-gray-600 body-font"
 >
     <div
-        class="flex lg:max-w-7xl mx-auto py-10 px-6 md:px-14 md:flex-row flex-col items-center relative z-10"
+        class:list={[
+            {
+                "md:flex-row-reverse": flexRowRevers,
+                "md:flex-row": !flexRowRevers,
+            },
+        ]}
+        class=`flex flex-col md:gap-20 lg:max-w-7xl mx-auto py-10 px-6 md:px-14 items-center relative z-10`
     >
         <div
-            class="md:w-3/5 md:pr-16 flex flex-col md:justify-center md:items-start md:text-left mb-16 md:mb-0 items-start text-start"
+            class="md:w-1/2 flex flex-col md:justify-center md:items-start md:text-left mb-16 md:mb-0 items-start text-start"
         >
             <span
                 class="text-[1em] bg-indigo-100 px-3 py-1 rounded-2xl font-medium"
@@ -18,12 +30,11 @@ import IconCheck from "../components/Icons/IconCheck.astro";
             <h2
                 class="title-font sm:text-4xl md:text-5xl text-3xl mb-4 pt-5 font-medium text-(--color-secundary)"
             >
-                Duis sagittis ipsum. <span class="text-(--color-brand)">
-                    Praesent</span
-                > mauris.
+                Duis sagittis ipsum. <br />
+                <span class="text-(--color-brand)"> Praesent</span> mauris.
             </h2>
             <p
-                class="mb-8 leading-relaxed font-normal text-[1.1em] text-gray-700"
+                class="md:w-[55ch] mb-8 leading-relaxed font-normal text-[1.1em] text-gray-700"
             >
                 Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent
                 taciti sociosqu ad litora torquent.
@@ -61,7 +72,7 @@ import IconCheck from "../components/Icons/IconCheck.astro";
                 > -->
             </div>
         </div>
-        <div class="md:w-2/5 w-5/6">
+        <div class="md:w-1/2">
             <img
                 class="object-cover object-center rounded"
                 alt="hero"
@@ -70,3 +81,5 @@ import IconCheck from "../components/Icons/IconCheck.astro";
         </div>
     </div>
 </section>
+
+<style></style>
